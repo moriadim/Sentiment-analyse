@@ -1,136 +1,94 @@
-🧠 Sentiment Analysis on Online Product Reviews
-This project aims to predict customer sentiment (positive, neutral, or negative) based on product reviews using machine learning techniques. It's designed to assist e-commerce platforms in understanding customer feedback and improving product offerings.​
+# Sentiment-Analysis-on-Online-Product-Reviews
+The objective of this project is to classify whether upcoming product will have positive or negative Sentiment.   
 
 
+![alt text](https://github.com/shreyaswankhede/Sentiment-Analysis-on-Online-Product-Reviews/blob/master/s1.png
+ "Correlation between features")
 
-🔍 What is Sentiment Analysis?
-Sentiment analysis, or opinion mining, involves analyzing textual data to determine the sentiment expressed by the author. It's widely used to assess opinions on:​
+***
 
-Products
+# Sentiment Analysis:
 
-Services
+* Sentiment analysis and Opinion mining is the computational study of User opinion to analyze the social, psychological, philosophical, behavior and perception of an individual person or a group of people about a product, policy, services and specific situations using Machine learning technique. Sentiment analysis is an important research area that identifies the people’s sentiment underlying a text and helps in decision making about the product.
 
-Policies
+# Customer Product reviews:
 
-Events​
+* A customer review is a review of a product or service made by a customer who has purchased and used, or had experience with the product or service. Customer reviews are a form of customer feedbacks on electronic commerce and online shopping sites. 
+90% of consumers read online reviews before purchasing product and 88% of consumers trust online reviews as much as personal recommendations.
 
-This analysis helps businesses make informed decisions based on customer feedback.​
+****
 
-🛍 About Customer Product Reviews
-Customer reviews are pivotal in online shopping decisions:​
+# Objective:
 
-90% of consumers read reviews before purchasing.
+<h3>End-user:</h3> E-Commerce Organization
+<h3> Dataset:</h3> 
+The Online Product Reviews dataset includes following features:
+Dependent feature: reviews.rating (Unhappy,OK,Happy)
+Independent features: review.text (Reviews)
+The dataset contains 71044 rows and 25 columns
 
-88% trust online reviews as much as personal recommendations.​
+* Source: https://data.world/datafiniti/grammar-and-online-product-reviews
 
-Analyzing these reviews provides valuable insights into customer satisfaction and product performance.​
+***
 
-🎯 Objective
-Target Audience: E-commerce businesses seeking to analyze customer feedback.​
+# Workflow:
 
-Dataset: Online Product Reviews from Datafiniti​
+![alt text](https://github.com/shreyaswankhede/Sentiment-Analysis-on-Online-Product-Reviews/blob/master/s2.png
+ "Correlation between features")
 
-Rows: 71,044
+<h2> Steps: </h2>
+<br>1. Data loading.
+<br>2. Data Preprocessing
 
-Columns: 25
+* Remove Punctuations,special symbols and special characters.
 
-Target Variable: reviews.rating (Happy, OK, Unhappy)
+* Stopword Removal
 
-Feature: review.text​
-GitHub
+* Tokenization
 
-📦 Dataset Source:
-Grammar and Online Product Reviews – data.world
+* Stemming
 
-🔄 Workflow
+***
 
+# WordCloud:
 
-Steps:
-Data Loading
+![alt text](https://github.com/shreyaswankhede/Sentiment-Analysis-on-Online-Product-Reviews/blob/master/s4.png
+ "Correlation between features")
 
-Data Preprocessing
+# Feature Extraction:
 
-Removing punctuations and special characters
+* In order to make sense to our machine learning algorithm we have converted each review to a numeric representation which is called 'Vectorization'.
 
-Stopword removal
+* The system uses TF-IDF Vectorizer (Term Frequency-Inverse document frequency) that transforms a count matrix to a normalized frequency representation in float.
 
-Tokenization
-
-Stemming
-
-Feature Extraction
-
-TF-IDF Vectorization
-
-Model Building
-
-Training Support Vector Machine (SVM) and SGDClassifier models
-
-Evaluation
-
-Assessing model performance using appropriate metrics​
-GitHub
-+2
-GitHub
-+2
-GitHub
-+2
-GitHub
-GitHub
-+3
-GitHub
-+3
-GitHub
-+3
-
-☁️ Word Cloud
-Visual representation of the most frequent terms in the reviews:​
+* Splitting the data into Train and Test set (70-30).
 
 
+<br> 1. TF-IDF
 
-📐 Feature Extraction
-To convert textual data into a format suitable for machine learning models, we use TF-IDF Vectorization:​
+1.Count how many times does a word occur in each message (Known as term frequency)
+2.Weigh the counts, so that frequent tokens get lower weight (inverse document frequency)
 
-TF (Term Frequency): Measures how frequently a term occurs in a document.
+<br>TF(t) = (Number of times term t appears in a document) / (Total number of terms in the document).
+<br>IDF(t) = log_e(Total number of documents / Number of documents with term t in it).
 
-IDF (Inverse Document Frequency): Measures how important a term is.​
-GitHub
-+4
-GitHub
-+4
-GitHub
-+4
+* Example: Consider a document containing 100 words wherein the word dog appears 3 times. The term frequency for dog is (3 / 100) = 0.03. Assume total of 10 million documents and the word dog appears in one thousand of these. Then, the inverse document frequency is calculated as log(10,000,000 / 1,000) = 4. 
 
-The TF-IDF score is calculated as:​
+* Thus, the Tf-idf weight is the product of these quantities: 0.03 * 4 = 0.12.
 
-TF-IDF = TF * IDF​
-GitHub
-+7
-GitHub
-+7
-GitHub
-+7
+***
 
-This transformation helps in emphasizing important words while reducing the weight of commonly used words.​
+# Model Building:
+<br> Building Support Vector Machine (SVM) and SGDClassifier on feature vectors.
 
-🤖 Model Building
-We train two models using the TF-IDF features:​
+# Results:
+![alt text](https://github.com/shreyaswankhede/Sentiment-Analysis-on-Online-Product-Reviews/blob/master/s5.PNG
+ "Correlation between features")
 
-Support Vector Machine (SVM): Effective in high-dimensional spaces.
-
-SGDClassifier: Efficient for large-scale learning.​
-
-Both models are evaluated to determine their accuracy in predicting customer sentiment.​
-
-📊 Results
-Performance metrics and evaluation results:​
+***
 
 
+<br>Thank You!	
+<p><!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/shreyaswankhede" aria-label="Follow @shreyaswankhede on GitHub">Follow @shreyaswankhede</a>
 
-🙌 Conclusion
-This project demonstrates a complete pipeline for sentiment analysis on product reviews, providing insights that can help businesses enhance customer satisfaction and product quality.​
-
-🔗 Connect
-Created by @moriadim​
-
-Feel free to fork, star, or follow for updates!
